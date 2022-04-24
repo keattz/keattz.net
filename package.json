@@ -46,6 +46,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "deploy": "yarn build && aws --profile personal s3 cp --recursive public/ s3://keattz.net/ && aws --profile personal cloudfront create-invalidation --distribution-id E3LU455MDEU67U --paths \"/*\"",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
