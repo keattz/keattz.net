@@ -11,7 +11,7 @@ export default function NavbarLink({ item }) {
       key={item.name}
       href={item.href}
       className={classNames(
-        item.href === pathname
+        pathname.startsWith(item.href)
           ? "bg-gray-900"
           : "text-gray-300 hover:bg-gray-700 hover:text-white",
         "font-medium px-3 py-2 rounded-md text-sm"

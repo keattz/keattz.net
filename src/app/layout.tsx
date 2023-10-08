@@ -1,6 +1,7 @@
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Bio from "@/components/Bio";
 import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,10 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <header className="container max-w-custom mx-auto px-4 py-4">
-          <h1 className="font-bold text-3xl">{metadata.title}</h1>
-        </header>
-        <main className="container max-w-custom mx-auto px-4">{children}</main>
+        <div className="flex flex-col gap-4">
+          <main className="container flex flex-col max-w-custom mx-auto px-4">
+            {children}
+          </main>
+          <Bio />
+        </div>
       </body>
     </html>
   );
