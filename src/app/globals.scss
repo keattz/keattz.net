@@ -3,7 +3,6 @@
 @import "~tailwindcss/utilities";
 
 body {
-  @apply antialiased;
-  @apply bg-black;
-  @apply text-gray-100;
+  @apply bg-green-900;
+  @apply text-zinc-100;
 }

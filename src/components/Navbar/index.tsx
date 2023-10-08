@@ -7,7 +7,7 @@ const navigation = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-800 mb-4">
+    <nav className="bg-neutral-800 mb-4 shadow-lg">
       <div className="container max-w-custom mx-auto px-4">
         <div className="flex h-16 items-center">
           <div className="space-x-4">

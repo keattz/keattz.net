@@ -21,11 +21,11 @@ const socials = [
 
 export default function About() {
   return (
-    <Card className="bg-gray-800 flex flex-col gap-4 p-4">
+    <Card className="bg-zinc-800 flex flex-col gap-4 p-4 shadow-lg">
       {socials.map((button, index) =>
         button.link ? (
           <a
-            className="bg-gray-700 duration-300 flex items-center p-4 rounded-lg transition hover:bg-gray-600"
+            className="bg-zinc-700 duration-300 flex items-center p-4 rounded-lg transition hover:text-green-400"
             href={button.link}
             key={index}
             rel="noopener noreferrer"
@@ -37,7 +37,7 @@ export default function About() {
             <span>{button.text}</span>
           </a>
         ) : (
-          <div className="bg-gray-800 border-2 border-gray-700 flex items-center p-4 rounded-lg">
+          <div className="bg-zinc-800 border-2 border-zinc-700 flex items-center p-4 rounded-lg">
             {button.text}
           </div>
         )

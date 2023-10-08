@@ -9,10 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       maxWidth: {
-        custom: "800px",
+        custom: "600px",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
