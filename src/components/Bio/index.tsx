@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 
 export default function Bio() {
   return (
-    <div className="container max-w-custom mx-auto px-4">
+    <div className="container max-w-custom mx-auto">
       <Card className="bg-gradient-to-r from-green-700 to-green-950 p-4 shadow-lg">
         <div className="flex gap-4 items-center">
           <img

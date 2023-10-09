@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import { serialize } from "next-mdx-remote/serialize";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -17,7 +18,20 @@ const formatDate = (date) => {
   });
   return `${formattedDate} at ${formattedTime}`;
 };
-const tagify = (tags) => tags.split(",").map((tag) => tag.trim());
+const formatTag = (tags) => tags.split(",").map((tag) => tag.trim());
+
+export const getPost = (slug) => {
+  const postPath = path.join(postsDirectory, `${slug}.mdx`);
+  const fileContents = fs.readFileSync(postPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return {
+    ...data,
+    content,
+    date: formatDate(data.date),
+    tags: formatTag(data.tags),
+  };
+};
 
 export const getPosts = () => {
   const posts = fs.readdirSync(postsDirectory);
@@ -29,7 +43,7 @@ export const getPosts = () => {
       ...data,
       date: formatDate(data.date),
       slug: post.replace(".mdx", ""),
-      tags: tagify(data.tags),
+      tags: formatTag(data.tags),
     };
   });
   return postsData.sort((a, b) => {
@@ -38,16 +52,4 @@ export const getPosts = () => {
     }
     return -1;
   });
-};
-
-export const getPost = (slug) => {
-  const postPath = path.join(postsDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(postPath, "utf8");
-  const { data, content } = matter(fileContents);
-  return {
-    ...data,
-    content,
-    date: formatDate(data.date),
-    tags: tagify(data.tags),
-  };
 };

@@ -14,7 +14,8 @@ export default function Post({ content, date, title, tags }) {
       </div>
       {content && (
         <div className="pt-4">
-          <MDXRemote source={content} />
+          {JSON.stringify(content)}
+          {/* <MDXRemote source={content} /> */}
         </div>
       )}
     </>

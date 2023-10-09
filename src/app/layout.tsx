@@ -21,7 +21,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <div className="flex flex-col gap-4">
-          <Bio />
           <main className="container flex flex-col max-w-custom mx-auto px-4">
             {children}
           </main>
