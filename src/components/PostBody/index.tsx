@@ -1,6 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { PostType } from "@/types";
 
-export default function Post({ content, date, title, tags }) {
+export default function Post({ content, date, title, tags }: PostType) {
   return (
     <>
       <h1 className="font-extrabold text-green-400 text-xl">{title}</h1>

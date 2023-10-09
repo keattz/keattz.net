@@ -5,6 +5,7 @@ export default function Card({
   className,
 }: {
   children: React.ReactNode;
+  className?: string;
 }) {
   return <div className={classNames("rounded-lg", className)}>{children}</div>;
 }

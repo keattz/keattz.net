@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className="flex h-12 items-center">
           <div className="space-x-4">
             {navigation.map((item) => (
-              <NavbarLink key={item.name} item={item} />
+              <NavbarLink href={item.href} key={item.name} name={item.name} />
             ))}
           </div>
         </div>

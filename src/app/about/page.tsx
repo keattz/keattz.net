@@ -48,9 +48,6 @@ export default function About() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              {button.image && (
-                <img src={button.image} alt={button.text} className="w-6 h-6" />
-              )}
               <span>{button.text}</span>
             </a>
           ) : (
