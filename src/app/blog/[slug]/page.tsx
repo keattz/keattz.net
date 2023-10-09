@@ -14,7 +14,6 @@ export function generateMetadata({ params }) {
 
 export default function Post({ params }) {
   const { title, date, tags, content } = getPost(params.slug);
-  console.log(content);
   return (
     <Card className="bg-zinc-800 flex flex-col p-4 shadow-lg">
       <PostBody title={title} date={date} tags={tags} content={content} />

@@ -1,4 +1,4 @@
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default function Post({ content, date, title, tags }) {
   return (
@@ -14,8 +14,7 @@ export default function Post({ content, date, title, tags }) {
       </div>
       {content && (
         <div className="pt-4">
-          {JSON.stringify(content)}
-          {/* <MDXRemote source={content} /> */}
+          <MDXRemote source={content} />
         </div>
       )}
     </>
