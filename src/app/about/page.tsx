@@ -8,24 +8,38 @@ const socials = [
   {
     text: (
       <>
-        <span className="text-gray-400 italic line-through">Twitch</span>{" "}
+        <span className="text-zinc-400 italic line-through">Twitch</span>{" "}
         YouTube Stream
       </>
     ),
     link: "https://www.youtube.com/@keattz/streams",
   },
   { text: "MyAnimeList", link: "https://myanimelist.net/profile/keattz" },
-  { text: "keattz on Discord" },
-  { text: "Keatts#1962 on Battle.net" },
+  {
+    text: (
+      <>
+        <span>keattz</span>&nbsp;
+        <span className="text-zinc-400">on Discord</span>
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        <span>Keatts#1962</span>&nbsp;
+        <span className="text-zinc-400">on Battle.net</span>
+      </>
+    ),
+  },
 ];
 
 export default function About() {
   return (
-    <Card className="bg-zinc-800 flex flex-col gap-4 p-4 shadow-lg">
+    <Card className="bg-zinc-800 flex flex-col gap-4 p-4 shadow-lg shadow-inner">
       {socials.map((button, index) =>
         button.link ? (
           <a
-            className="bg-zinc-700 duration-300 flex items-center p-4 rounded-lg transition hover:text-green-400"
+            className="bg-zinc-700 duration-300 flex items-center p-4 rounded-lg transition hover:text-green-400 hover:bg-zinc-600"
             href={button.link}
             key={index}
             rel="noopener noreferrer"

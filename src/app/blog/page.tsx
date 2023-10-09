@@ -5,26 +5,24 @@ import Link from "next/link";
 export default function Blog() {
   const posts = getPosts();
   return (
-    <Card className="bg-zinc-800 flex flex-col gap-4 p-4 shadow-lg">
+    <Card className="bg-zinc-800 flex flex-col gap-2 p-2 shadow-lg">
       {posts.map((post) => {
         return (
-          <div key={post.slug}>
-            <Link href={`/blog/${post.slug}`}>
-              <div className="duration-300 transition hover:text-green-400">
-                <h1 className="font-extrabold	text-xl">{post.title}</h1>
-                <div className="text-sm">{post.date}</div>
-              </div>
-            </Link>
+          <Link
+            className="p-2 rounded hover:bg-zinc-700 hover:text-green-400"
+            href={`/blog/${post.slug}`}
+            key={post.slug}
+          >
+            <h1 className="font-extrabold text-xl">{post.title}</h1>
+            <div className="text-sm text-zinc-400">{post.date}</div>
             <div className="flex gap-2 mt-1">
-              {post.tags.map((tag) => (
-                <Link href={`/tag/${tag}`}>
-                  <div className="bg-zinc-700 px-2 py-1 rounded text-xs transition hover:text-green-400">
-                    {tag}
-                  </div>
-                </Link>
+              {post.tags.map((tag, i) => (
+                <div className="bg-zinc-600 px-2 py-1 rounded text-xs !text-zinc-100">
+                  {tag}
+                </div>
               ))}
             </div>
-          </div>
+          </Link>
         );
       })}
     </Card>

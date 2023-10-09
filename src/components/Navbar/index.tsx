@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="bg-neutral-800 mb-4 shadow-lg">
       <div className="container max-w-custom mx-auto px-4">
-        <div className="flex h-16 items-center">
+        <div className="flex h-12 items-center">
           <div className="space-x-4">
             {navigation.map((item) => (
               <NavbarLink key={item.name} item={item} />

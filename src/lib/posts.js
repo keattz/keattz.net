@@ -4,6 +4,19 @@ import path from "path";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
+const formatDate = (date) => {
+  const dateObject = new Date(1000 * date);
+  const formattedDate = dateObject.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+  const formattedTime = dateObject.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+  });
+  return `${formattedDate} at ${formattedTime}`;
+};
 const tagify = (tags) => tags.split(",").map((tag) => tag.trim());
 
 export const getPosts = () => {
@@ -14,6 +27,7 @@ export const getPosts = () => {
     const { content, data } = matter(fileContents);
     return {
       ...data,
+      date: formatDate(data.date),
       slug: post.replace(".mdx", ""),
       tags: tagify(data.tags),
     };
@@ -33,6 +47,7 @@ export const getPost = (slug) => {
   return {
     ...data,
     content,
+    date: formatDate(data.date),
     tags: tagify(data.tags),
   };
 };

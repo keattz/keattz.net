@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 export default function Bio() {
   return (
     <div className="container max-w-custom mx-auto px-4">
-      <Card className="bg-zinc-800 p-4 shadow-lg">
+      <Card className="bg-gradient-to-r from-green-700 to-green-950 p-4 shadow-lg">
         <div className="flex gap-4 items-center">
           <img
             alt="Avatar"
@@ -11,7 +11,9 @@ export default function Bio() {
             width={100}
             src="/avatar.jpg"
           />
-          <div>Short bio here</div>
+          <div className="font-bold text-4xl drop-shadow-lg">
+            <span className="text-black">keattz</span> is a nerd
+          </div>
         </div>
       </Card>
     </div>
