@@ -7,12 +7,13 @@ export default function Bio() {
         <div className="flex gap-4 items-center">
           <img
             alt="Avatar"
-            className="rounded-full"
+            className="rounded-full border-4 border-black"
             width={100}
             src="/avatar.jpg"
           />
           <div className="font-bold text-4xl drop-shadow-lg">
-            <span className="text-black">keattz</span> is a nerd
+            <span className="text-black">keattz</span>
+            {" is loading..."}
           </div>
         </div>
       </Card>
