@@ -7,7 +7,7 @@ import PostHeader from "../../components/post-header";
 import Tags from "../../components/tags";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 
-export default function Post({ post, posts, preview }) {
+export default function Post({ post, preview }) {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
@@ -19,7 +19,8 @@ export default function Post({ post, posts, preview }) {
   ) : (
     <>
       <Head>
-        <title>{post.title} | keattz.net</title>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
         {post.featuredImage && <meta property="og:image" content={post.featuredImage.node.sourceUrl} />}
       </Head>
       <article className="bg-white rounded-lg">
