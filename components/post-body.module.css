@@ -1,5 +1,5 @@
 .content {
-  @apply text-lg leading-relaxed;
+  @apply leading-relaxed;
 }
 
 .content p,
@@ -73,4 +73,10 @@
 
 .content audio {
   @apply w-full;
+}
+
+.content iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
 }

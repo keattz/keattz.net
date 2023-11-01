@@ -1,16 +1,16 @@
-import Alert from "./alert";
-import Footer from "./footer";
 import Meta from "./meta";
+import Link from "next/link";
 
-export default function Layout({ preview, children }) {
+export default function Layout({ children }) {
   return (
-    <>
+    <div className="max-w-xl mx-auto p-5">
       <Meta />
-      <div className="min-h-screen">
-        <Alert preview={preview} />
-        <main>{children}</main>
-      </div>
-      <Footer />
-    </>
+      <h2 className="font-bold mb-5 text-4xl">
+        <Link href="/" className="hover:underline">
+          keattz.net
+        </Link>
+      </h2>
+      <main>{children}</main>
+    </div>
   );
 }

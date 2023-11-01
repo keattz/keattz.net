@@ -13,6 +13,8 @@ interface Props {
 }
 
 export default function CoverImage({ title, coverImage, slug }: Props) {
+  if (!coverImage) return null;
+
   const image = (
     <Image
       width={2000}
