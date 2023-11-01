@@ -6,6 +6,7 @@ import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import Tags from "../../components/tags";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
+import he from "he";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Post({ post, preview }) {
     <>
       <Head>
         <title>{post.title}</title>
-        <meta name="description" content={post.excerpt} />
+        <meta name="description" content={he.decode(post.excerpt)} />
         {post.featuredImage && <meta property="og:image" content={post.featuredImage.node.sourceUrl} />}
       </Head>
       <article className="bg-white rounded-lg">
