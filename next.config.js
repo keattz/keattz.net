@@ -5,9 +5,9 @@ if (!URL.canParse(process.env.WORDPRESS_API_URL)) {
   `);
 }
 
-const { protocol, hostname, port, pathname } = new URL(
-  process.env.WORDPRESS_API_URL
-);
+const { protocol, hostname, port, pathname } = new URL(process.env.WORDPRESS_API_URL);
+
+console.log({ protocol, hostname, port, pathname });
 
 /** @type {import('next').NextConfig} */
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
         protocol: protocol.slice(0, -1),
         hostname,
         port,
-        pathname: `${pathname}/**`,
+        pathname: `/**`,
       },
       {
         protocol: "https",

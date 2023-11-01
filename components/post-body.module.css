@@ -1,5 +1,6 @@
 .content {
   @apply leading-relaxed;
+  @apply p-3;
 }
 
 .content p,
@@ -7,6 +8,14 @@
 .content ol,
 .content blockquote {
   @apply my-4;
+}
+
+.content p:first-child {
+  @apply mt-0;
+}
+
+.content p:last-child {
+  @apply mb-0;
 }
 
 .content a {

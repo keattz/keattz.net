@@ -20,12 +20,12 @@ export default function Post({ post, posts, preview }) {
     <>
       <Head>
         <title>{post.title} | keattz.net</title>
-        <meta property="og:image" content={post.featuredImage?.node.sourceUrl} />
+        {post.featuredImage && <meta property="og:image" content={post.featuredImage.node.sourceUrl} />}
       </Head>
-      <article className="">
+      <article className="bg-white rounded-lg">
         <PostHeader title={post.title} coverImage={post.featuredImage} date={post.date} categories={post.categories} />
         <PostBody content={post.content} />
-        <footer>{post.tags.edges.length > 0 && <Tags tags={post.tags} />}</footer>
+        {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
       </article>
     </>
   );
