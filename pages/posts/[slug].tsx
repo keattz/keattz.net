@@ -22,7 +22,7 @@ export default function Post({ post, posts, preview }) {
         <title>{post.title} | keattz.net</title>
         <meta property="og:image" content={post.featuredImage?.node.sourceUrl} />
       </Head>
-      <article className="flex flex-col gap-3">
+      <article className="">
         <PostHeader title={post.title} coverImage={post.featuredImage} date={post.date} categories={post.categories} />
         <PostBody content={post.content} />
         <footer>{post.tags.edges.length > 0 && <Tags tags={post.tags} />}</footer>
